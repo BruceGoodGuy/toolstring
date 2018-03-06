@@ -5,44 +5,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('.ok').click(function(){
-				var  a = $('input').val()
-				var b = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-				var le = b.length
-				var c =[]
-				for(var i = 0; i<a; i++){
-					var d =  Math.floor((Math.random() * le-1) + 1)
-					c.push(b[d])
-				}
-				var res ='';
-				for(var i = 0; i<c.length;i++){
-					res += c[i];
-				}
-				$('.hehe').fadeIn()
-				$("#result").val(res)
-			})
-			$('.copy').click(function(){
-				var copyText = document.getElementById("result");
-				copyText.select();
-				document.execCommand("Copy");
-			})
-			$(".cou").click(function(){
-				$(".bum").hide();
-				$(".bem").fadeIn(500);
-			})
-			$(".gen").click(function(){
-				$(".bem").hide();
-				$(".bum").fadeIn(500);
-			})
-			$(".count").click(function(){
-				$('.aa').fadeIn()
-				var string = $(".stringa").val()
-				$('.aa').html(string.length)
-			})
-		})
-	</script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/magic.js"></script>
 </head>
 <body>
 <div class="container mt-3">
@@ -62,7 +26,7 @@
 		<div class="form-group mt-3">
 		    <label for="input">String Result</label>
 		    <input type="text" class="form-control" id="result" aria-describedby="number" placeholder="Result over here">
-		    <small id="emailHelp" class="form-text text-muted mb-2">Input lenght of string</small>
+		    <small id="" class="form-text text-muted mb-2">Result string</small>
 		     <button type="button" class="btn btn-outline-success copy">Copy</button>
 	  	</div>
 	</div>
@@ -72,8 +36,9 @@
 		<div class="form-group mt-3">
 		    <label for="input">String</label>
 		    <input type="text" class="form-control stringa" id="exampleInputEmail1" aria-describedby="text" placeholder="Paste string here">
-		    <small id="emailHelp" class="form-text text-muted mb-2">Input lenght of string</small>
+		    <small id="emailHelp" class="form-text text-muted mb-2">Input string</small>
 		    <button type="button" class="btn btn-outline-danger count">Count</button>
+		    <button type="button" class="btn btn-outline-danger paste">Paste (IE)</button>
 	  	</div>
 
 	  	<span class="badge badge-pill badge-danger aa">0</span>
