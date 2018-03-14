@@ -43,17 +43,26 @@ $(document).ready(function(){
 		$(".bem").hide();
 		$(".bum").fadeIn(500);
 	})
-	function strlen(){
+	function editstring(string){
+		return $.trim(string.replace(/\s+/g, ''))
+	}
+	function strlen(string,check){
 		$('.aa').fadeIn()
-		var string = $(".stringa").val()
+		if(!check){
+		 string = editstring(string)
+		}
 		$('.aa').html(string.length)
 	}
 	$(".count").click(function(){
-		strlen()
+		var string = $(".stringa").val()
+		var check = $(".form-check-input").prop("checked");
+		strlen(string,check)
 	})
 	$(".stringa").keydown(function(event){
 		 if (event.keyCode == 13) {
-	      	strlen()
+		 	var string = $(".stringa").val()
+		 	var check = $(".form-check-input").prop("checked");
+	      	strlen(string,check)
 	    }
 	})
 	$(".paste").click(function(event){
